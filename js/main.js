@@ -22,9 +22,9 @@ var app = new Vue({
                         pic: "./img/logo.png",
                     },
                     {
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/logo.png",
+                        name: "Nitro+",
+                        link: "https://www.nitroplus.co.jp/",
+                        pic: "./img/nplus.png",
                     },
                     {
                         name: "yuzusoft",
