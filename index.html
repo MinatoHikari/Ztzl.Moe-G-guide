@@ -72,8 +72,8 @@
                             <div>
                                 <div class="card-name">{{card1.name}}</div>
                             </div>
-                            <card-link v-for="sortlist in card1.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5">
-                                <a slot="link" :href="sortlist.link" target="_blank">
+                            <card-link v-for="(sortlist,index) in card1.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5">
+                                <a slot="link"    :href="sortlist.link" target="_blank">
                                     <div slot="title" class="link-title">{{sortlist.name}}</div>
                                     <img slot="pic" :src="sortlist.pic">
                                 </a>
@@ -92,7 +92,7 @@
                 <div class="title">
                     <slot name="title"></slot>
                 </div>
-                <slot name="link"></slot>
+                <slot @mouseenter="floatLink" :class="{'float-link': linkUP}" name="link"></slot>
                 <slot name="pic"></slot>
             </div>
         </div>

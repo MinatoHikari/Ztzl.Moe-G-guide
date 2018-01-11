@@ -1,3 +1,7 @@
+.float-link {
+    margin-right: 3px;
+}
+
 .pure-menu {
     text-align: center;
     position: fixed;
@@ -205,6 +209,9 @@
         margin-left: 28px;
         background: none;
         border: 0;
+    }
+    .link img {
+        max-width: 80%;
     }
 }
 
