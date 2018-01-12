@@ -245,7 +245,7 @@
         padding-right: 5px;
     }
 }
-
+/* 滚动条 */
 ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -267,6 +267,3 @@
     background-color: #CCCCCC;
     border-radius: 6px;
 }
-
-
-/* css动画 */
