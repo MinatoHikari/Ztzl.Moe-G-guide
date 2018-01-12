@@ -350,9 +350,9 @@ var app = new Vue({
             {
                 name: "国外团体",
                 sortlists: [{
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/logo.png",
+                        name: "5年目の放課後",
+                        link: "http://5-y.2-d.jp/",
+                        pic: "./img/5y.jpg",
                     },
                     {
                         name: "yuzusoft",
@@ -417,9 +417,9 @@ var app = new Vue({
             {
                 name: "黄油店铺",
                 sortlists: [{
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/logo.png",
+                        name: "Melonbooks",
+                        link: "https://www.melonbooks.co.jp/",
+                        pic: "./img/melonbooks.gif",
                     },
                     {
                         name: "yuzusoft",
