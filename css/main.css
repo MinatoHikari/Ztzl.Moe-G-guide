@@ -186,6 +186,7 @@
         width: 0;
         position: fixed;
         left: 0;
+        bottom: 0;
         transition-property: width;
         transition-duration: 0.2s;
         transition-timing-function: linear;
