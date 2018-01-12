@@ -1,7 +1,19 @@
 //定义标签模板
 Vue.component("card-link", {
     template: "#link",
-
+    data: function() {
+          //卡片浮动效果
+          return {linkUP: false,}
+    },
+    methods: {
+        //卡片浮动效果
+        floatLink: function () {
+             this.linkUP = true;
+        },
+        floatLinkLeave: function() {
+            this.linkUP = false;
+        },
+    }
 })
 
 //新实例
@@ -13,8 +25,7 @@ var app = new Vue({
         //导航菜单显隐
         iconX: false,
         iconCircle: true,
-        //卡片浮动效果
-        linkUP: false,
+
 
 
         cardlist1: [
@@ -495,9 +506,7 @@ var app = new Vue({
         },
 
 
-            floatLink: function () {
-                this.linkUP = true;
-            }
+
         
     }
 });
