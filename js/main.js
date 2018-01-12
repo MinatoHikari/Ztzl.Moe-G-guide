@@ -22,6 +22,7 @@ var app = new Vue({
     data: {
         //全局渲染
         isVisiable: false,
+        isRight: false,
         //导航菜单显隐
         iconX: false,
         iconCircle: true,
@@ -498,10 +499,12 @@ var app = new Vue({
                 this.isVisiable = true;
                 this.iconX = true;
                 this.iconCircle = false;
+                this.isRight = true;
             } else {
                 this.isVisiable = false;
                 this.iconX = false;
                 this.iconCircle = true;
+                this.isRight = false;
             }
         },
 

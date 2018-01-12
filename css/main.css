@@ -168,9 +168,27 @@
         width: 2.5em;
         height: 2.5em;
         position: fixed;
+        left: 0;
+        transition-property: left;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+    }
+    .pure-menu,
+    .visiable {
+        position: fixed;
+        bottom: auto;
+        transition-property: width;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        background-color: black;
     }
     .pure-menu {
-        display: none;
+        width: 0;
+        position: fixed;
+        left: 0;
+        transition-property: width;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
     }
     .logo {
         margin-top: 10px;
@@ -183,25 +201,35 @@
     }
     .visiable {
         display: block;
-        position: fixed;
-        top: 40px;
-        bottom: auto;
+        width: 130px;
+    }
+    .menuButtonRight{
+        left: 130px!important;
+        transition-property: left;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
         background-color: black;
+    }
+    .menu-button{
+        background: none;
     }
     .menu-button,
     .menu-button-icon {
         display: block;
         position: fixed;
+        left: 0;
         width: 40px;
         height: 40px;
-        color: white;
+        color: white!important;
         font-size: 32px;
-        background: none;
         border: 0;
         outline: 0;
+        transition-property: left;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
     }
     .menu-button-icon {
-        position: absolute;
+        background: none;
         margin-top: 4px;
         margin-left: 4px;
     }
@@ -212,6 +240,9 @@
     }
     .link img {
         max-width: 80%;
+    }
+    .float-link {
+        padding-right: 5px;
     }
 }
 
@@ -236,3 +267,6 @@
     background-color: #CCCCCC;
     border-radius: 6px;
 }
+
+
+/* css动画 */
