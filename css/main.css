@@ -3,7 +3,7 @@ body {
 }
 
 .float-link {
-    padding-right: 10px;
+    transform: translate(-3px, -3px)
 }
 
 .pure-menu {

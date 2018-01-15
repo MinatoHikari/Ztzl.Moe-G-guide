@@ -89,8 +89,8 @@
 
     <!-- 标签模板 -->
     <template id="link">
-        <div class="panel">
-            <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="link">
+        <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="panel">
+            <div  class="link">
                 <div class="title">
                     <slot name="title"></slot>
                 </div>
