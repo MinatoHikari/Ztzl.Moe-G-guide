@@ -74,7 +74,7 @@ body {
 .site-name {
     color: white;
     margin-bottom: 10px;
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: 1px 1px 1px #f7f7f7b6;
 }
 
@@ -161,6 +161,10 @@ body {
     display: inline-block;
     margin: 10px 0;
     width: 80%;
+}
+
+.menu-button-icon {
+    display: none;
 }
 
 .card-name {
