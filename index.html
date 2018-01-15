@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ztzl.Moe-G-guide</title>
-    <link rel="icon" href="./img/logo.jpg" />
+    <link rel="icon" href="./img/logo.webp" />
     <link rel="stylesheet" type="text/css" href="./node_modules/purecss/build/base-min.css">
     <link rel="stylesheet" type="text/css" href="./node_modules/purecss/build/pure-min.css">
     <link rel="stylesheet" type="text/css" href="./node_modules/purecss/build/grids-responsive-min.css">
@@ -90,7 +90,7 @@
     <!-- 标签模板 -->
     <template id="link">
         <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="panel">
-            <div  class="link">
+            <div :class="{'float-link-shadow': linkUP}" class="link">
                 <div class="title">
                     <slot name="title"></slot>
                 </div>

@@ -3,7 +3,11 @@ body {
 }
 
 .float-link {
-    transform: translate(-3px, -3px)
+    transform: translate(-3px, -3px);
+}
+
+.float-link-shadow {
+    box-shadow: 4px 7px 15px rgba(204, 202, 202, 0.527)!important;
 }
 
 .pure-menu {
