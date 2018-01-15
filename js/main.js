@@ -422,9 +422,9 @@ var app = new Vue({
                         pic: "./img/melonbooks.gif",
                     },
                     {
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/logo.png",
+                        name: "Getchu",
+                        link: "http://www.getchu.com",
+                        pic: "./img/getchu.gif",
                     },
                     {
                         name: "yuzusoft",

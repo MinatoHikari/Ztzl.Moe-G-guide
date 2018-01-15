@@ -1,3 +1,7 @@
+body {
+    min-width: 380px;
+}
+
 .float-link {
     padding-right: 10px;
 }
@@ -50,8 +54,17 @@
     color: rgba(0, 0, 0, 0.774);
 }
 
+.picbox {
+    height: 60px;
+    align-items: center;
+    justify-content : center;
+    display: flex;
+}
+
 .link img {
-    padding: 3px 0;
+    max-width: 100%;
+    height: auto;
+    margin: auto 0;
 }
 
 .site-name {
@@ -120,6 +133,7 @@
     background-color: white;
     margin: 0 10px 10px 10px;
     box-shadow: 2px 5px 10px rgba(204, 202, 202, 0.527);
+    min-width: 130px;
 }
 
 .pure-u-md-1-3 {
