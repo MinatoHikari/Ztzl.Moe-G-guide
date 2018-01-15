@@ -1,16 +1,19 @@
 //定义标签模板
 Vue.component("card-link", {
     template: "#link",
-    data: function() {
-          //卡片浮动效果
-          return {linkUP: false,}
+    data: function () {
+        //卡片浮动效果
+        return {
+            linkUP: false,
+            search: true,
+        }
     },
     methods: {
         //卡片浮动效果
         floatLink: function () {
-             this.linkUP = true;
+            this.linkUP = true;
         },
-        floatLinkLeave: function() {
+        floatLinkLeave: function () {
             this.linkUP = false;
         },
     }
@@ -26,8 +29,9 @@ var app = new Vue({
         //导航菜单显隐
         iconX: false,
         iconCircle: true,
-
-
+        //卡片检索
+        searchname: "",
+        searchself: true,
 
         cardlist1: [
             //1
@@ -508,8 +512,11 @@ var app = new Vue({
             }
         },
 
+        search: function () {
+                if (this.searchname === '') {
+                    this.searchself = false;
+                }
+        },
 
-
-        
     }
 });

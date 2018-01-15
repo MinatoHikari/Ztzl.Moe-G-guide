@@ -58,28 +58,29 @@
             <div class="pure-u-1 pure-u-sm-6-24 pure-u-md-5-24 pure-u-lg-4-24 placeholder"></div>
             <div class="pure-u-sm-18-24 pure-u-md-19-24 pure-u-lg-20-24 main">
                 <div id="page-list">
-
                     <div class="pagelists">
                         <form class="">
                             <div class="search">
-                                <input type="search" class="search-input" placeholder="暂时没用">
-                                <button type="submit">
+                                <input @keyup.prevent="search" v-model="searchname" type="text" class="search-input" placeholder="暂时没用">
+                                <button @click.prevent="search" type="submit">
                                     <i class="czs-search-l"></i>
                                 </button>
                             </div>
                         </form>
-                        <div v-for="(card1,ID) in cardlist1" class="card" :id="card1.ID">
+                        <div v-for="(cardX,ID) in cardlist1" class="card" :id="cardX.ID">
                             <div>
-                                <div class="card-name">{{card1.name}}</div>
+                                <div class="card-name">{{cardX.name}}</div>
                             </div>
-                            <card-link v-for="(sortlist,index) in card1.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5">
-                                <a slot="link" :href="sortlist.link" target="_blank">
-                                    <div slot="title" class="link-title">{{sortlist.name}}</div>
-                                    <div class="picbox">
-                                        <img slot="pic" :src="sortlist.pic">
-                                    </div>
-                                </a>
-                            </card-link>
+                            <div>
+                                <card-link v-if="searchself" v-for="(sortlist,index) in cardX.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5">
+                                    <a slot="link" :href="sortlist.link" target="_blank">
+                                        <div slot="title" class="link-title">{{sortlist.name}}</div>
+                                        <div class="picbox">
+                                            <img slot="pic" :src="sortlist.pic">
+                                        </div>
+                                    </a>
+                                </card-link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,15 +90,17 @@
 
     <!-- 标签模板 -->
     <template id="link">
-        <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="panel">
-            <div :class="{'float-link-shadow': linkUP}" class="link">
-                <div class="title">
-                    <slot name="title"></slot>
+        <transition name="fade">
+            <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="panel">
+                <div :class="{'float-link-shadow': linkUP}" class="link">
+                    <div class="title">
+                        <slot name="title"></slot>
+                    </div>
+                    <slot name="link"></slot>
+                    <slot name="pic"></slot>
                 </div>
-                <slot name="link"></slot>
-                <slot name="pic"></slot>
             </div>
-        </div>
+        </transition>
     </template>
 
     <script src="./node_modules/vue/dist/vue.min.js"></script>
