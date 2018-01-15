@@ -264,9 +264,6 @@ body {
     .link img {
         max-width: 80%;
     }
-    .float-link {
-        padding-right: 5px;
-    }
 }
 /* 滚动条 */
 ::-webkit-scrollbar {
