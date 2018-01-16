@@ -62,7 +62,7 @@ ul {
 .cardbackground {
     background-color: rgb(255, 255, 255);
     transition: background-color 1s;
-    min-height: 500px;
+    min-height: 150px;
 }
 
 .link-title {

@@ -128,9 +128,9 @@ var app = new Vue({
                         pic: "./img/kf.webp",
                     },
                     {
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/yuzu.webp",
+                        name: "Purplesoftware",
+                        link: "http://www.purplesoftware.jp",
+                        pic: "./img/purple.webp",
                     },
                     {
                         name: "yuzusoft",
@@ -209,9 +209,9 @@ var app = new Vue({
                         pic: "./img/yuzu.webp",
                     },
                     {
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/yuzu.webp",
+                        name: "Purplesoftware",
+                        link: "http://www.purplesoftware.jp",
+                        pic: "./img/purple.webp",
                     },
                     {
                         name: "yuzusoft",
@@ -286,9 +286,9 @@ var app = new Vue({
                         pic: "./img/yuzu.webp",
                     },
                     {
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/yuzu.webp",
+                        name: "Purplesoftware",
+                        link: "http://www.purplesoftware.jp",
+                        pic: "./img/purple.webp",
                     },
                     {
                         name: "yuzusoft",
@@ -358,9 +358,9 @@ var app = new Vue({
                         pic: "./img/5y.webp",
                     },
                     {
-                        name: "yuzusoft",
-                        link: "http://www.yuzu-soft.com",
-                        pic: "./img/yuzu.webp",
+                        name: "Purplesoftware",
+                        link: "http://www.purplesoftware.jp",
+                        pic: "./img/purple.webp",
                     },
                     {
                         name: "yuzusoft",
