@@ -2,6 +2,10 @@ body {
     min-width: 380px;
 }
 
+ul {
+    padding: 0;
+}
+
 .float-link {
     transform: translate(-3px, -4px);
     transition: transform 0.2s;
@@ -47,10 +51,18 @@ body {
 }
 
 .card {
-    background-color: #fff7f3;
+    background-color: rgb(255, 247, 243);
     margin: 30px 0;
     display: block;
     padding: 10px;
+    min-height: 150px;
+    transition: background-color 1s;
+}
+
+.cardbackground {
+    background-color: rgb(255, 255, 255);
+    transition: background-color 1s;
+    min-height: 500px;
 }
 
 .link-title {
@@ -61,7 +73,7 @@ body {
 .picbox {
     height: 60px;
     align-items: center;
-    justify-content : center;
+    justify-content: center;
     display: flex;
 }
 
@@ -86,13 +98,15 @@ body {
     color: #f0d3c5;
 }
 
-::-moz-placeholder {/*Firefox*/
-    color:#f0d3c5;
-    }
+::-moz-placeholder {
+    /*Firefox*/
+    color: #f0d3c5;
+}
 
-::-ms-input-placeholder {/*IE*/
-        color:#f0d3c5;
-     }
+::-ms-input-placeholder {
+    /*IE*/
+    color: #f0d3c5;
+}
 
 .search {
     text-align: right;
@@ -245,14 +259,14 @@ body {
         display: block;
         width: 130px;
     }
-    .menuButtonRight{
+    .menuButtonRight {
         left: 130px!important;
         transition-property: left;
         transition-duration: 0.2s;
         transition-timing-function: linear;
         background-color: black;
     }
-    .menu-button{
+    .menu-button {
         background: none;
     }
     .menu-button,
@@ -284,7 +298,10 @@ body {
         max-width: 80%;
     }
 }
+
+
 /* 滚动条 */
+
 ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -307,10 +324,39 @@ body {
     border-radius: 6px;
 }
 
+
 /* 过渡动画 */
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-leave-active {
+    transition: opacity 1s;
+}
+
+.fade-leave-to {
     opacity: 0;
-  }
+}
+
+.fade-move {
+    transition: transform, opacity 1s, 1s;
+}
+
+.fade-card-leave-active {
+    transition: opacity, background-color 1s, 1s;
+}
+
+.fade-card-leave-to {
+    opacity: 0;
+    background-color: rgb(255,255,255);
+}
+
+.fade-card-leave-active {
+    transition: opacity, background-color 1s, 1s;
+}
+
+.fade-card-leave-to {
+    opacity: 0;
+    background-color: rgb(255,255,255);
+}
+
+.fade-card-move {
+    transition: all 1s;
+}

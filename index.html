@@ -67,21 +67,25 @@
                                 </button>
                             </div>
                         </form>
-                        <div v-for="(cardX,index) in cardlist1" class="card" :id="cardX.ID">
-                            <div>
-                                <div class="card-name">{{cardX.name}}</div>
+                        <transition-group name="fade-card" tag="ul">
+                            <div v-for="(cardX,index) in cardlist1" :class="{cardbackground: backgroundChange}" class="card" :id="cardX.ID" :key="cardX">
+                                <div>
+                                    <div class="card-name">{{cardX.name}}</div>
+                                </div>
+                                <div>
+                                    <transition-group name="fade" tag="ul">
+                                        <card-link v-for="sortlist in cardX.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5" :key="sortlist">
+                                            <a slot="link" :href="sortlist.link" target="_blank">
+                                                <div slot="title" class="link-title">{{sortlist.name}}</div>
+                                                <div class="picbox">
+                                                    <img slot="pic" :src="sortlist.pic">
+                                                </div>
+                                            </a>
+                                        </card-link>
+                                    </transition-group>
+                                </div>
                             </div>
-                            <div>
-                                <card-link v-if="searchself" v-for="(sortlist,index) in cardX.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5">
-                                    <a slot="link" :href="sortlist.link" target="_blank">
-                                        <div slot="title" class="link-title">{{sortlist.name}}</div>
-                                        <div class="picbox">
-                                            <img slot="pic" :src="sortlist.pic">
-                                        </div>
-                                    </a>
-                                </card-link>
-                            </div>
-                        </div>
+                        </transition-group>
                     </div>
                 </div>
             </div>
@@ -90,20 +94,22 @@
 
     <!-- 标签模板 -->
     <template id="link">
-        <transition name="fade">
-            <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="panel">
-                <div :class="{'float-link-shadow': linkUP}" class="link">
-                    <div class="title">
-                        <slot name="title"></slot>
-                    </div>
-                    <slot name="link"></slot>
-                    <slot name="pic"></slot>
+
+        <!-- <transition name="fade" mode="out-in"> -->
+        <div @mouseleave="floatLinkLeave" @mouseenter="floatLink" :class="{'float-link': linkUP}" class="panel">
+            <div :class="{'float-link-shadow': linkUP}" class="link">
+                <div class="title">
+                    <slot name="title"></slot>
                 </div>
+                <slot name="link"></slot>
+                <slot name="pic"></slot>
             </div>
-        </transition>
+        </div>
+        <!-- </transition> -->
     </template>
 
     <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

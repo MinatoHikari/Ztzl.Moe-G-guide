@@ -30,7 +30,7 @@ var app = new Vue({
         iconCircle: true,
         //卡片检索
         searchname: "",
-        searchself: true,
+        backgroundChange: false,
 
         cardlist1: [
             //1
@@ -495,7 +495,7 @@ var app = new Vue({
 
         ]
     },
-//侧栏收缩
+    //侧栏收缩
     methods: {
         menuBar: function () {
             if (this.iconCircle === true) {
@@ -510,11 +510,22 @@ var app = new Vue({
                 this.isRight = false;
             }
         },
-//卡片检索
+        //卡片检索
         search: function () {
             var r = /\s+/g;
             var newName = new RegExp(this.searchname.toLowerCase().replace(r, ' ').split(' ').join('|'));
-            for (var i=0; i<app.cardlist1.length; i++) {
+            for (var i = 0; i < app.cardlist1.length; i++) {
+                // app.cardlist1[i].sortlists.sort(function(a, b) {
+                //     if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) !== -1) {
+                //         return 1;
+                //     } else if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) === -1) {
+                //         return 0;
+                //     } else if (a.name.toLowerCase().search(newName) !== -1 && b.name.toLowerCase().search(newName) !== -1) {
+                //         return 0;
+                //     } else {
+                //         return -1;
+                //     }
+                // });
                 app.cardlist1[i].sortlists = app.cardlist1[i].sortlists.filter(function (val) {
                     if (val.name.toLowerCase().search(newName) === -1) {
                         return false;
@@ -523,6 +534,17 @@ var app = new Vue({
                     }
                 });
             }
+            app.cardlist1.sort(function(a, b) {
+                    return b.sortlists.length - a.sortlists.length;
+                });
+            app.cardlist1 = app.cardlist1.filter(function (val) {
+                if (val.sortlists.length === 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+            this.backgroundChange = true;
         },
     }
 });
