@@ -512,8 +512,8 @@ var app = new Vue({
         },
 //卡片检索
         search: function () {
-            var newName = new RegExp(this.searchname.toLowerCase().split(' ').join('|'));
-            console.log(newName);
+            var r = /\s+/g;
+            var newName = new RegExp(this.searchname.toLowerCase().replace(r, ' ').split(' ').join('|'));
             for (var i=0; i<app.cardlist1.length; i++) {
                 app.cardlist1[i].sortlists = app.cardlist1[i].sortlists.filter(function (val) {
                     if (val.name.toLowerCase().search(newName) === -1) {
