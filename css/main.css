@@ -180,6 +180,12 @@ body {
 }
 
 @media screen and (max-width: 568px) {
+    .float-link {
+        transform: none;
+    }
+    .float-link-shadow {
+        box-shadow: 0 0 15px rgba(239, 248, 153, 0.527);
+    }
     .czs-dropbox {
         color: white;
     }
