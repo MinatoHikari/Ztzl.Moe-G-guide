@@ -59,15 +59,15 @@
             <div class="pure-u-sm-18-24 pure-u-md-19-24 pure-u-lg-20-24 main">
                 <div id="page-list">
                     <div class="pagelists">
-                        <form class="">
+                        <form @submit.prevent="search" class="">
                             <div class="search">
-                                <input @keyup.prevent="search" v-model="searchname" type="text" class="search-input" placeholder="暂时没用">
+                                <input v-model.trim="searchname" type="text" class="search-input" placeholder="暂时没用">
                                 <button @click.prevent="search" type="submit">
                                     <i class="czs-search-l"></i>
                                 </button>
                             </div>
                         </form>
-                        <div v-for="(cardX,ID) in cardlist1" class="card" :id="cardX.ID">
+                        <div v-for="(cardX,index) in cardlist1" class="card" :id="cardX.ID">
                             <div>
                                 <div class="card-name">{{cardX.name}}</div>
                             </div>

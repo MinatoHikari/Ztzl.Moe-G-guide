@@ -513,10 +513,14 @@ var app = new Vue({
         },
 
         search: function () {
-                if (this.searchname === '') {
-                    this.searchself = false;
-                }
+            var newName = this.searchname.toLowerCase();
+            for (var i=0; i<app.cardlist1.length; i++) {
+                app.cardlist1[i].sortlists = app.cardlist1[i].sortlists.filter(function (val) {
+                    if (val.name.toLowerCase() === newName) {
+                        return true;
+                    }
+                });
+            }
         },
-
     }
 });
