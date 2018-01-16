@@ -5,7 +5,6 @@ Vue.component("card-link", {
         //卡片浮动效果
         return {
             linkUP: false,
-            search: true,
         }
     },
     methods: {
@@ -496,7 +495,7 @@ var app = new Vue({
 
         ]
     },
-
+//侧栏收缩
     methods: {
         menuBar: function () {
             if (this.iconCircle === true) {
@@ -511,12 +510,15 @@ var app = new Vue({
                 this.isRight = false;
             }
         },
-
+//卡片检索
         search: function () {
-            var newName = this.searchname.toLowerCase();
+            var newName = new RegExp(this.searchname.toLowerCase());
+            console.log(newName);
             for (var i=0; i<app.cardlist1.length; i++) {
                 app.cardlist1[i].sortlists = app.cardlist1[i].sortlists.filter(function (val) {
-                    if (val.name.toLowerCase() === newName) {
+                    if (val.name.toLowerCase().search(newName) === -1) {
+                        return false;
+                    } else {
                         return true;
                     }
                 });

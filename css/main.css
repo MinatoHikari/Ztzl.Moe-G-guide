@@ -47,7 +47,7 @@ body {
 }
 
 .card {
-    background-color: #fff5efa4;
+    background-color: #fff7f3;
     margin: 30px 0;
     display: block;
     padding: 10px;
@@ -81,6 +81,18 @@ body {
 .menu-button {
     display: none;
 }
+
+::-webkit-input-placeholder {
+    color: #f0d3c5;
+}
+
+::-moz-placeholder {/*Firefox*/
+    color:#f0d3c5;
+    }
+
+::-ms-input-placeholder {/*IE*/
+        color:#f0d3c5;
+     }
 
 .search {
     text-align: right;
