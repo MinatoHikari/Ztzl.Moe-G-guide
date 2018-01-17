@@ -67,6 +67,7 @@
                                 </button>
                             </div>
                         </form>
+                        <div v-if="cardloop" key="static">
                         <transition-group name="fade-card" tag="ul">
                             <div v-for="(cardX,index) in cardlist1" :class="{cardbackground: backgroundChange}" class="card" :id="cardX.ID" :key="cardX">
                                 <div>
@@ -84,8 +85,9 @@
                                         </card-link>
                                     </transition-group>
                                 </div>
-                            </div>
+                                </div>
                         </transition-group>
+                    </div>
                     </div>
                 </div>
             </div>
