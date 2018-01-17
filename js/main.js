@@ -517,17 +517,17 @@ var app = new Vue({
             var r = /\s+/g;
             var newName = new RegExp(this.searchname.toLowerCase().replace(r, ' ').split(' ').join('|'));
             for (var i = 0; i < app.cardlist1.length; i++) {
-                app.cardlist1[i].sortlists.sort(function (a, b) {
-                    if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) !== -1) {
-                        return 1;
-                    } else if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) === -1) {
-                        return 0;
-                    } else if (a.name.toLowerCase().search(newName) !== -1 && b.name.toLowerCase().search(newName) !== -1) {
-                        return 0;
-                    } else {
-                        return -1;
-                    }
-                });
+                // app.cardlist1[i].sortlists.sort(function (a, b) {
+                //     if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) !== -1) {
+                //         return 1;
+                //     } else if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) === -1) {
+                //         return 0;
+                //     } else if (a.name.toLowerCase().search(newName) !== -1 && b.name.toLowerCase().search(newName) !== -1) {
+                //         return 0;
+                //     } else {
+                //         return -1;
+                //     }
+                // });
                 var newarray = app.cardlist1[i].sortlists.filter(function (val) {
                     if (val.name.toLowerCase().search(newName) === -1) {
                         return false;
@@ -539,13 +539,14 @@ var app = new Vue({
             console.log(newarray);
             this.cardlist1 = [{
                 name: "搜索结果",
-                sortlists: []
+                sortlists: [],
+                ID: "H1",
             }];
             for (i = 0; i < newarray.length; i++) {
                 app.cardlist1[0].sortlists.push(newarray[i]);
             }
 
-            this.backgroundChange = true;
+            // this.backgroundChange = true;
         },
     }
 });
