@@ -33,7 +33,7 @@
                     </div>
                     <span class="pure-menu-heading">黄油导航</span>
                     <ul class="pure-menu-list">
-                        <transition-group name="fade-card" tag="ul">
+                        <transition-group name="fade-card" :class="{menuheight: menuloop}" tag="ul" class="card-menu">
                             <li v-for="cardX in cardlist1" class="pure-menu-item" :key="cardX">
                                 <a :href="'#' + cardX.ID" class="pure-menu-link">{{cardX.name}}</a>
                             </li>
@@ -69,27 +69,27 @@
                                 </button>
                             </div>
                         </form>
-                        <div v-if="cardloop" key="static">
-                            <transition-group name="fade-card" tag="ul">
-                                <div v-for="(cardX,index) in cardlist1" :class="{cardbackground: backgroundChange}" class="card" :id="cardX.ID" :key="cardX">
-                                    <div>
-                                        <div class="card-name">{{cardX.name}}</div>
-                                    </div>
-                            
-                                        <transition-group name="fade" tag="ul">
-                                            <card-link v-for="sortlist in cardX.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5" :key="sortlist">
-                                                <a slot="link" :href="sortlist.link" target="_blank">
-                                                    <div slot="title" class="link-title">{{sortlist.name}}</div>
-                                                    <div class="picbox">
-                                                        <img slot="pic" :src="sortlist.pic">
-                                                    </div>
-                                                </a>
-                                            </card-link>
-                                        </transition-group>
 
+                        <transition-group name="fade-card" tag="ul">
+                            <div v-for="(cardX,index) in cardlist1" :class="{cardbackground: backgroundChange}" class="card" :id="cardX.ID" :key="cardX">
+                                <div>
+                                    <div class="card-name">{{cardX.name}}</div>
                                 </div>
-                            </transition-group>
-                        </div>
+
+                                <transition-group name="fade" tag="ul">
+                                    <card-link v-for="sortlist in cardX.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5" :key="sortlist">
+                                        <a slot="link" :href="sortlist.link" target="_blank">
+                                            <div slot="title" class="link-title">{{sortlist.name}}</div>
+                                            <div class="picbox">
+                                                <img slot="pic" :src="sortlist.pic">
+                                            </div>
+                                        </a>
+                                    </card-link>
+                                </transition-group>
+
+                            </div>
+                        </transition-group>
+
                     </div>
                 </div>
             </div>

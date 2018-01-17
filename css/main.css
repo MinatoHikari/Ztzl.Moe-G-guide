@@ -83,6 +83,10 @@ ul {
     margin: auto 0;
 }
 
+.menuheight {
+    max-height: 37px;
+}
+
 .site-name {
     color: white;
     margin-bottom: 10px;

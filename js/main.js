@@ -31,7 +31,7 @@ var app = new Vue({
         //卡片检索
         searchname: "",
         backgroundChange: false,
-        cardloop: true,
+        menuloop: false,
 
         cardlist1: [
             //1
@@ -537,7 +537,7 @@ var app = new Vue({
                     }
                 });
             }
-            
+
             newarray = newarray.concat(app.cardlist1);
             console.log(newarray.length);
             this.cardlist1 = [{
@@ -547,10 +547,11 @@ var app = new Vue({
             }];
 
             for (i = 0; i < newarray.length; i++) {
-                for (var j=0; j<newarray[i].sortlists.length;j++) {
+                for (var j = 0; j < newarray[i].sortlists.length; j++) {
                     app.cardlist1[0].sortlists.push(newarray[i].sortlists[j]);
                 }
             }
+            this.menuloop = true;
             // this.backgroundChange = true;
         },
     }
