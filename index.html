@@ -75,7 +75,7 @@
                                     <div>
                                         <div class="card-name">{{cardX.name}}</div>
                                     </div>
-                                    <div>
+                            
                                         <transition-group name="fade" tag="ul">
                                             <card-link v-for="sortlist in cardX.sortlists" class="pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-5" :key="sortlist">
                                                 <a slot="link" :href="sortlist.link" target="_blank">
@@ -86,7 +86,7 @@
                                                 </a>
                                             </card-link>
                                         </transition-group>
-                                    </div>
+
                                 </div>
                             </transition-group>
                         </div>

@@ -516,6 +516,7 @@ var app = new Vue({
         search: function () {
             var r = /\s+/g;
             var newName = new RegExp(this.searchname.toLowerCase().replace(r, ' ').split(' ').join('|'));
+            var newarray = []
             for (var i = 0; i < app.cardlist1.length; i++) {
                 // app.cardlist1[i].sortlists.sort(function (a, b) {
                 //     if (a.name.toLowerCase().search(newName) === -1 && b.name.toLowerCase().search(newName) !== -1) {
@@ -528,7 +529,7 @@ var app = new Vue({
                 //         return -1;
                 //     }
                 // });
-                var newarray = app.cardlist1[i].sortlists.filter(function (val) {
+                app.cardlist1[i].sortlists = app.cardlist1[i].sortlists.filter(function (val) {
                     if (val.name.toLowerCase().search(newName) === -1) {
                         return false;
                     } else {
@@ -536,16 +537,20 @@ var app = new Vue({
                     }
                 });
             }
-            console.log(newarray);
+            
+            newarray = newarray.concat(app.cardlist1);
+            console.log(newarray.length);
             this.cardlist1 = [{
                 name: "搜索结果",
                 sortlists: [],
                 ID: "H1",
             }];
-            for (i = 0; i < newarray.length; i++) {
-                app.cardlist1[0].sortlists.push(newarray[i]);
-            }
 
+            for (i = 0; i < newarray.length; i++) {
+                for (var j=0; j<newarray[i].sortlists.length;j++) {
+                    app.cardlist1[0].sortlists.push(newarray[i].sortlists[j]);
+                }
+            }
             // this.backgroundChange = true;
         },
     }
